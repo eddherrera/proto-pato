@@ -1,0 +1,41 @@
+name: Create Release Branch from Develop
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., 1.2.0)'
+        required: true
+        type: string
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Develop Branch
+        uses: actions/checkout@v4
+        with:
+          ref: 'develop'  # 👈 Always bases the release branch on develop
+          fetch-depth: 0
+
+      - name: Configure Git User
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create and Push Release Branch
+        run: |
+          VERSION="${{ github.event.inputs.version }}"
+          BRANCH_NAME="release/v$VERSION"
+          
+          echo "Creating branch $BRANCH_NAME from develop..."
+          
+          # Create the release branch off the currently checked-out develop branch
+          git checkout -b $BRANCH_NAME
+          
+          # Push the new release branch to GitHub
+          git push origin $BRANCH_NAME
