@@ -14,7 +14,7 @@ concurrency:
 jobs:
   # 1) Simulate Deploy to Test & 2) Run E2E Tests
   deploy-test:
-    if: ${{ github.event_name == 'push' || startsWith(github.ref, 'refs/heads/release/v') }}
+    if: ${{ (github.event_name == 'push' || github.event_name == 'create') && startsWith(github.ref, 'refs/heads/release/v') }}
     runs-on: ubuntu-latest
     environment: test
     
