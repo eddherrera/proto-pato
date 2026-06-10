@@ -3,7 +3,8 @@ name: Release Branch Pipeline (Test & UAT)
 on:
   push:
     branches:
-      - 'release/v*' # Triggers on branch creation AND every time a PR is merged into it
+      - 'release/v*'
+  create:
 
 # 🔄 Automatically cancels older, in-progress runs for the same release branch
 concurrency:
@@ -13,6 +14,7 @@ concurrency:
 jobs:
   # 1) Simulate Deploy to Test & 2) Run E2E Tests
   deploy-test:
+    if: ${{ github.event_name == 'push' || startsWith(github.ref, 'refs/heads/release/v') }}
     runs-on: ubuntu-latest
     environment: test
     
