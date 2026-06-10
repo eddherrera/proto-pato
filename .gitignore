@@ -1,0 +1,108 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+npm-shrinkwrap.json
+.pnpm-debug.log*
+.env
+.env.local
+.env.*.local
+.DS_Store
+/dist
+/build
+/.next
+/out
+
+# Frontend `src/frontend`
+/src/frontend/node_modules/
+/src/frontend/.npm/
+/src/frontend/.env*
+/src/frontend/dist/
+/src/frontend/build/
+/src/frontend/coverage/
+/src/frontend/.parcel-cache/
+/src/frontend/out/
+
+# Backend `src/backend/PimsBackend`
+/src/backend/PimsBackend/bin/
+/src/backend/PimsBackend/obj/
+/src/backend/PimsBackend/*.user
+/src/backend/PimsBackend/*.rsuser
+/src/backend/PimsBackend/*.suo
+/src/backend/PimsBackend/*.userosscache
+/src/backend/PimsBackend/*.sln.docstates
+/src/backend/PimsBackend/.vs/
+
+# Visual Studio / .NET
+bin/
+obj/
+**/obj/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+TestResults/
+*.dbmdl
+*.bak
+*.Backup
+*.ncb
+*.aps
+*.log
+*.vspscc
+*.vssscc
+*.cache
+*.pdb
+*.mdb
+*.class
+*.dll
+*.exe
+*.cachefile
+*.ilk
+*.meta
+*.obj
+*.map
+*.resources
+*.sdf
+*.dbproj.schemaview
+*.jfm
+
+# Rider
+.idea/
+*.sln.iml
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.swp
+*~
+
+# Build outputs
+publish/
+*/publish/
+
+# NuGet
+*.nupkg
+packages/
+.nuget/packages/
+.nuget/packages/*
+
+# Logs
+*.log
+
+# JetBrains Rider
+.idea/
+
+# npm cache
+.npm
+.npmrc
+
+# Frontend build artifacts
+dist/
+build/
+coverage/
